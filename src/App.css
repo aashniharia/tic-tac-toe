@@ -1,0 +1,30 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+.buttonCointainer {
+  display: flex;
+  flex-direction: row;
+  padding: 4px;
+  justify-content: center;
+}
+.gameButton {
+  background-color: aquamarine;
+  padding: 4px;
+  height: 40px;
+  width: 40px;
+  margin: 12px;
+  cursor: pointer;
+}
+
+.gameButton:disabled {
+  background-color: aquamarine;
+  color: black;
+  opacity: 1;
+  padding: 8px;
+  height: 40px;
+  width: 40px;
+  margin: 12px;
+}
