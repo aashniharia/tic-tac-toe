@@ -10,21 +10,90 @@
   padding: 4px;
   justify-content: center;
 }
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.status-message {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #333;
+  font-weight: bold;
+}
+
+.game-board {
+  background: #14bdac;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.buttonContainer {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
 .gameButton {
-  background-color: aquamarine;
-  padding: 4px;
-  height: 40px;
-  width: 40px;
-  margin: 12px;
+  width: 100px;
+  height: 100px;
+  margin: 0;
+  font-size: 3rem;
+  font-weight: bold;
+  background-color: #fff;
+  border: none;
+  border-radius: 8px;
   cursor: pointer;
+  transition: all 0.2s;
+  color: #545454;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  line-height: 1;
+}
+
+.gameButton:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .gameButton:disabled {
-  background-color: aquamarine;
-  color: black;
+  cursor: not-allowed;
   opacity: 1;
-  padding: 8px;
-  height: 40px;
-  width: 40px;
-  margin: 12px;
+}
+
+.gameButton[data-value="X"] {
+  color: #545454;
+}
+
+.gameButton[data-value="O"] {
+  color: #ecc132;
+}
+
+.restartButton {
+  margin-top: 20px;
+  padding: 12px 24px;
+  font-size: 1.2rem;
+  background-color: #32a4a8;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.restartButton:hover {
+  background-color: #2a8d91;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }

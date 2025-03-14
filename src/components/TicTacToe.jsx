@@ -51,6 +51,15 @@ export const TicTacToe = () => {
       setClickCounter((prevState) => prevState + 1);
     }
   };
+
+  const handleRestart = () => {
+    setButtonState(buttonArr);
+    setIsPlayer1(true);
+    setClickCounter(-1);
+    setIsGameEnd(false);
+    setWinner(null);
+  };
+
   useEffect(() => {
     if (clickCounter >= 8) {
       setIsGameEnd(true);
@@ -59,21 +68,28 @@ export const TicTacToe = () => {
   }, [clickCounter]);
 
   return (
-    <>
+    <div className="game-container">
       {isEndGame ? (
-        <p>Game Over!!: {winner ? `Winner is ${winner}` : "its a Tie"}</p>
+        <>
+          <p className="status-message">
+            Game Over!!: {winner ? `Winner is ${winner}` : "its a Tie"}
+          </p>
+        </>
       ) : (
-        <p>{isPlayer1 ? 'Player "X" turn' : 'Player "O" turn'}</p>
+        <p className="status-message">
+          {isPlayer1 ? 'Player "X" turn' : 'Player "O" turn'}
+        </p>
       )}
-      <div>
+      <div className="game-board">
         {[0, 3, 6].map((row) => (
-          <div className="buttonCointainer">
-            {buttonState.slice(row, row + 3).map((eachButton, index) => (
+          <div className="buttonContainer" key={row}>
+            {buttonState.slice(row, row + 3).map((eachButton) => (
               <button
                 className="gameButton"
                 key={eachButton?.buttonId}
                 onClick={() => handlePlay(eachButton.buttonId)}
                 disabled={eachButton.buttonValue !== null || isEndGame}
+                data-value={eachButton.buttonValue}
               >
                 {eachButton.buttonValue}
               </button>
@@ -81,6 +97,11 @@ export const TicTacToe = () => {
           </div>
         ))}
       </div>
-    </>
+      {isEndGame && (
+        <button className="restartButton" onClick={handleRestart}>
+          Restart Game
+        </button>
+      )}
+    </div>
   );
 };
