@@ -1,7 +1,14 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { io } from "socket.io-client";
 
-const socket = io("https://tic-tac-trophy-server.onrender.com");
+const socket = io("https://tic-tac-trophy-server.onrender.com", {
+  withCredentials: true,
+  transports: ["websocket"],
+  cors: {
+    origin: "https://tic-tac-trophy.netlify.app/",
+  },
+});
+
 const INITIAL_BOARD = new Array(9).fill(null).map((_, index) => ({
   buttonId: index,
   buttonPosition: index,
