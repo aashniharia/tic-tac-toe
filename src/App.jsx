@@ -5,7 +5,7 @@ import Loader from "./components/Loader";
 import axios from "axios";
 
 const App = () => {
-  const [isServerAwake, setIsServerAwake] = useState(false);
+  const [isServerAwake, setIsServerAwake] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
 
   const checkServer = useCallback(async () => {
