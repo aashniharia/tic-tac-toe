@@ -1,8 +1,8 @@
 # Tic-Tac-Toe Game
 
-Welcome to the **Tic-Tac-Toe Game** built using **React.js** and **CSS**! 🎮
+Welcome to the **Tic-Tac-Toe Game** built using **React.js** , **Node.js + Socket.io** and **CSS**! 🎮
 
-This is a simple, interactive Tic-Tac-Toe game where you can play the classic game with a friend (or against yourself) in your browser. It is fully responsive, styled with custom CSS, and deployed live on **Netlify**.
+This is a multiplayer interactive Tic-Tac-Toe game where you can play the classic game with a friend in your browser. It is fully responsive, styled with custom CSS, and deployed live on **Netlify**.
 
 You can play the game by visiting:  
 **[https://tic-tac-trophy.netlify.app/](https://tic-tac-trophy.netlify.app/)**
@@ -27,5 +27,6 @@ You can play the game by visiting:
 ## Tech Stack 🛠️
 
 - **Frontend**: React.js
+- **Backend**: Node.js + Socket.io
 - **Styling**: Custom CSS
 - **Deployment**: Netlify
