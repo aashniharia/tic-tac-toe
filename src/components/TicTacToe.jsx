@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { io } from "socket.io-client";
 
-const socket = io(import.meta.env.VITE_SERVER_URL, {
+const socket = io("https://tic-tac-trophy-server.onrender.com", {
   withCredentials: true,
   transports: ["websocket"],
   cors: {
-    origin: import.meta.env.VITE_CLIENT_URL,
+    origin: "https://tic-tac-trophy.netlify.app/",
   },
 });
 
