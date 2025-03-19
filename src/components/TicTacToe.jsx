@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { io } from "socket.io-client";
 
-const socket = io("https://tic-tac-trophy-server.onrender.com", {
+const socket = io(import.meta.env.VITE_SERVER_URL, {
   withCredentials: true,
   transports: ["websocket"],
   cors: {
-    origin: "https://tic-tac-trophy.netlify.app/",
+    origin: import.meta.env.VITE_CLIENT_URL,
   },
 });
 
@@ -187,6 +187,7 @@ export const TicTacToe = () => {
           <button className="create-room-btn" onClick={createRoom}>
             Create New Game
           </button>
+          <span>or</span>
           <div className="join-room-container">
             <input
               type="text"
